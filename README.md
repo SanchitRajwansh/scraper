@@ -102,6 +102,13 @@ CREATE TABLE IF NOT EXISTS products (
 );
 ```
 
+ ### Step 7: Create an images folder at the root level of your project
+```bash
+cd scraper
+mkdir images
+```
+
+
 ## Running the Project
 
  ### Step 1: Start the FastAPI Server
