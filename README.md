@@ -68,7 +68,7 @@ JSON_FILE_PATH=/scraped_data.json
 # add your local postgres settings here if different
 DATABASE_URL=postgresql://username:password@localhost:5432/scraper
 
-# Redis configuration (optional, for caching)
+# Redis configuration
 REDIS_HOST=localhost  # add your local redis settings here if different
 REDIS_PORT=6379
 REDIS_INDEX=0
