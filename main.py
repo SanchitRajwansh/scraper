@@ -52,7 +52,6 @@ class Scraper:
         self.session = requests.Session()
         self.email_id = settings.email
 
-        # Add retry mechanism
         retries = Retry(total=3, backoff_factor=2, status_forcelist=[500, 502, 503, 504])
         adapter = HTTPAdapter(max_retries=retries)
         self.session.mount('http://', adapter)
@@ -78,7 +77,6 @@ class Scraper:
 
     def save_data(self):
         for product in self.products:
-            # Check cache if price has changed
             cached_price = redis_object.get(product.product_title)
             if cached_price is None or float(cached_price) != product.product_price:
                 self.storage.save([product.dict()])
